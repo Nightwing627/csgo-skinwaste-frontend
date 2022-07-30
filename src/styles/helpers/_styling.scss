@@ -1,0 +1,43 @@
+// border radius
+$bdrd-i: 0;
+
+@each $index, $radius in $border-radius {
+  .bdrd-#{$bdrd-i} {
+    border-radius: $radius !important;
+  }
+
+  .bdrd-tr-#{$bdrd-i} {
+    border-top-right-radius: $radius !important;
+  }
+
+  .bdrd-tl-#{$bdrd-i} {
+    border-top-left-radius: $radius !important;
+  }
+
+  .bdrd-br-#{$bdrd-i} {
+    border-bottom-right-radius: $radius !important;
+  }
+
+  .bdrd-bl-#{$bdrd-i} {
+    border-bottom-left-radius: $radius !important;
+  }
+
+  // increment
+  $bdrd-i: $bdrd-i + 1;
+}
+
+.bdrd-round {
+  border-radius: 50px;
+}
+
+.bdrd-circle {
+  border-radius: 50%;
+}
+
+.rounded-circle {
+  border-radius: 50%;
+}
+// cursor
+.cursor-pointer {
+  cursor: pointer;
+}

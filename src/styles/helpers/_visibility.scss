@@ -1,0 +1,70 @@
+/*
+ * Hide visually and from screen readers:
+ * http://juicystudio.com/article/screen-readers-display-none.php
+ */
+
+.hidden {
+  display: none !important;
+  visibility: hidden;
+}
+
+/*
+ * Hide only visually, but have it available for screen readers:
+ * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ */
+
+.visuallyhidden {
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+  overflow: visible;
+  clip: auto;
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+}
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+
+.invisible {
+  visibility: hidden;
+}
+
+// opacity
+.opaque {
+  opacity: 1;
+}
+
+.faded-8 {
+  opacity: 0.8;
+}
+
+.faded-5 {
+  opacity: 0.5;
+}
+
+.faded-3 {
+  opacity: 0.3;
+}
+
+.faded-1 {
+  opacity: 0.1;
+}

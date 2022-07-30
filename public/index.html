@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/icons/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/img/icons/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="shortcut icon" href="/img/icons/favicon.ico">
+    <meta name="msapplication-config" content="/img/icons/browserconfig.xml">
+    <!-- <meta name="theme-color" content="#ffffff"> -->
+
+    <title>Skinwaste</title>
+    <meta name="description" content="It's official, we're back. Come play in some jackpots or play some coinflips.">
+    <meta name="keywords" content="skinwaste,skinbet,ezskins,ezrage,roobet,massive.gg,crypto,csgo,gambling,crypto,bitcoin,ethereum,btc,eth,elite,silver,jackpot,coinflip,website,site,official">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@latest/css/materialdesignicons.min.css" />
+
+    <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit">
+    </script>
+    <script >window._grecaptcha = grecaptcha;</script>
+    <!-- minimal loader -->
+    <style>
+      #appLoader {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        z-index: 99;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #2e353f;
+        user-select: none;
+        transition: transform 0.6s cubic-bezier(0.86, 0, 0.07, 1);
+      }
+
+      #appLoader.outtahere {
+        transform: translateY(100%);
+      }
+
+      #appLoader img {
+        width: 80%;
+        max-width: 200px;
+        user-select: none;
+        transition: transform 0.4s ease, opacity 0.3s ease;
+        pointer-events: none;
+      }
+
+      #appLoader.outtahere img {
+        opacity: 0;
+        transform: scale(0);
+      }
+
+      #appLoader .progressbar {
+        overflow: hidden;
+        position: relative;
+        width: 80%;
+        max-width: 150px;
+        height: 3px;
+        margin-top: 60px;
+        border-radius: 25px;
+        background: #1e2128;
+      }
+
+      #appLoader .progressbar::after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #9C97FF;
+        content: ' ';
+        animation: progressbar ease-in-out 1s infinite;
+      }
+
+      @keyframes progressbar {
+        0% {
+          transform: scaleX(0);
+          transform-origin: center left;
+        }
+
+        50% {
+          transform: scaleX(1);
+          transform-origin: center left;
+        }
+
+        51% {
+          transform-origin: center right;
+        }
+
+        100% {
+          transform: scaleX(0);
+          transform-origin: center right;
+        }
+      }
+
+      @keyframes appLoaderPulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1); }
+        75% { transform: scale(1.1); }
+        100% { transform: scale(1); }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="appLoader">
+      <img src="/img/logo-1.svg" alt="logo icon">
+      <div class="progressbar"></div>
+    </div>
+
+    <noscript>
+      <strong>
+        We're sorry but this website doesn't work without JavaScript enabled.
+        Please enable it to continue.
+      </strong>
+    </noscript>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
+</html>

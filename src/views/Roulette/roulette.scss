@@ -1,0 +1,738 @@
+.roulette {
+  text-align: center;
+  .center {
+    justify-content: center;
+    .v-progress-linear {
+      position: relative;
+      margin: 0 auto;
+      margin-top: 12px;
+      margin-bottom: -24px;
+      width: 90% !important;
+      // left: 50%;
+    }
+  }
+  .space {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+
+    &--left {
+      justify-content: flex-end;
+      margin-left: -10px;
+    }
+    .countdown {
+      color: #fff;
+      font-size: 1.6em;
+    }
+    .hash {
+      color: #6f748b;
+      margin-left: 0.3rem;
+    }
+    .history {
+      margin: auto;
+      color: #6f748b;
+      display: flex;
+      span {
+        margin-right: -1em;
+      }
+      ul {
+        display: flex;
+        list-style: none;
+      }
+      li {
+        display: flex;
+        align-items: center;
+        margin-right: 0.4em;
+        .past-roll {
+          position: relative;
+          top: 25%;
+          display: block;
+          border-radius: 2px;
+          transition: opacity 0.1s;
+          height: 25px;
+          width: 6px;
+          background: linear-gradient(180deg, #6c809c 0%, #4f5f75 100%);
+          border-radius: 5px;
+          &--3x {
+            height: 30px;
+            background: linear-gradient(
+              180deg,
+              #9c97ff 0%,
+              #6c64ff 100%
+            ) !important;
+          }
+          &--5x {
+            height: 35px;
+            background: linear-gradient(
+              180deg,
+              #be93ff 0%,
+              #9e5eff 100%
+            ) !important;
+          }
+          &--30x {
+            height: 40px;
+            background: linear-gradient(
+              180deg,
+              #eccd62 0%,
+              #deb422 100%
+            ) !important;
+          }
+          &.tooltip {
+            position: relative;
+            display: inline-block;
+            &:hover .tooltip-info,
+            &:focus .tooltip-info {
+              visibility: visible;
+              opacity: 1;
+              // transform: translate3d(0,0,0);
+            }
+
+            .tooltip-info {
+              box-sizing: border-box;
+              position: absolute;
+              bottom: 25px;
+              left: 50%;
+              display: block;
+              background: $grey300;
+              color: #ececec;
+              width: 125px;
+              font-size: 12px;
+              line-height: 16px;
+              cursor: text;
+              visibility: hidden;
+              opacity: 0;
+              transform: translate3d(-50%, -20px, 0);
+              transition: all 0.5s ease-out;
+              padding-top: 0.5em;
+              border-radius: 3px;
+              &--3x {
+                border: 2px solid#9c97ff;
+                .darken {
+                  color: #9c97ff !important;
+                }
+              }
+              &--5x {
+                border: 2px solid #be93ff;
+                .darken {
+                  color: #be93ff !important;
+                }
+              }
+              &--30x {
+                border: 2px solid#eccd62;
+                .darken {
+                  color: #eccd62 !important;
+                }
+              }
+
+              &:after {
+                position: absolute;
+                content: "";
+                width: 10px;
+                height: 10px;
+                transform: rotate(45deg);
+                bottom: -5px;
+                left: 50%;
+                margin-left: -5px;
+                background: inherit;
+              }
+
+              .darken {
+                color: #8392a7;
+              }
+
+              .tooltip-text {
+                background: $grey300;
+                color: #ececec;
+                display: block;
+                padding-bottom: 0.3em;
+                margin: 0;
+                z-index: 5;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .last-rolls {
+    margin: auto;
+    .title {
+      display: flex;
+      align-items: center;
+      margin: 0 0.4em;
+      padding-left: 0.2em;
+      font-weight: 500;
+      color: #8392a7;
+      border-bottom: 1px solid #8392a7;
+      font-size: 1rem !important;
+    }
+    .last_roll {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 0.1rem;
+
+      .--2x {
+        color: #6c809c;
+      }
+      .--3x {
+        color: #9c97ff;
+      }
+      .--5x {
+        color: #be93ff;
+      }
+      .--30x {
+        color: #deb422;
+      }
+      .last-roll-number {
+        font-size: 1.2em;
+        margin: 0.25rem;
+        display: inline-block;
+        padding: 0.3125em 0.75em;
+        background: #6f748b10;
+        border-radius: 2px;
+        border: 1px solid #6f748b52;
+        text-align: center;
+        white-space: nowrap;
+      }
+    }
+  }
+
+  .previousBets {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .previousBets-buttons-wrap {
+      display: flex;
+      // justify-content: center;
+      align-items: center;
+      margin: auto;
+      button {
+        margin: 0 0.5em;
+        display: inline-block;
+        min-width: 4em;
+        border-radius: 3px;
+        padding: 0.5em;
+        transition: background 0.5s ease-in;
+
+        background: linear-gradient(
+          90deg,
+          rgba(#9cb0cc, 0.75) 0%,
+          rgba(#6c809c, 0.75) 100%
+        );
+        &:hover {
+          background: linear-gradient(
+            90deg,
+            rgba(#9cb0cc, 0.5) 0%,
+            rgba(#6c809c, 0.5) 100%
+          );
+        }
+
+        &.--purple {
+          background: linear-gradient(
+            180deg,
+            rgba(#9c97ff, 0.75) 0%,
+            rgba(#6c64ff, 0.75) 100%
+          ) !important;
+          background-color: rgba(#6c64ff, 0.75) !important;
+          &:hover {
+            background: linear-gradient(
+              180deg,
+              rgba(#9c97ff, 0.5) 0%,
+              rgba(#6c64ff, 0.5) 100%
+            ) !important;
+            background-color: rgba(#6c64ff, 0.5) !important;
+          }
+        }
+        &.--pink {
+          background: linear-gradient(
+            180deg,
+            rgba(#be93ff, 0.75) 0%,
+            rgba(#9e5eff, 0.75) 100%
+          ) !important;
+          background-color: rgba(#9e5eff, 0.725) !important;
+          &:hover {
+            background: linear-gradient(
+              180deg,
+              rgba(#be93ff, 0.5) 0%,
+              rgba(#9e5eff, 0.5) 100%
+            ) !important;
+            background-color: rgba(#9e5eff, 0.5) !important;
+          }
+        }
+        &.--gold {
+          background: linear-gradient(
+            180deg,
+            rgba(#eccd62, 0.75) 0%,
+            rgba(#deb422, 0.75) 100%
+          ) !important;
+          background-color: rgba($gold, 0.75) !important;
+          &:hover {
+            background: linear-gradient(
+              180deg,
+              rgba(#eccd62, 0.5) 0%,
+              rgba(#deb422, 0.5) 100%
+            ) !important;
+            background-color: rgba($gold, 0.5) !important;
+          }
+        }
+      }
+    }
+  }
+
+  .bet-input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .bet-input-container {
+      display: flex;
+      flex-direction: row;
+      // border-radius: 3px;
+      margin: 0.5em 1em;
+      // padding: 1em;
+      background: #6f748b10;
+      border-radius: 5px;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.13),
+        inset 0px -1px 0px rgba(255, 255, 255, 0.03),
+        inset 0px -1px 1px rgba(255, 255, 255, 0.03);
+
+      .bet-input-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 2px solid #465163;
+        border-radius: 3px;
+        padding: 0.05em;
+        margin: 0.25em;
+        input {
+          outline: none;
+          color: #ececec;
+          margin: 0.4em 0 0.2em 0;
+          font-size: 1.1em;
+        }
+      }
+      img {
+        width: 20px;
+        margin: 0.5em;
+      }
+    }
+    .bet-buttons {
+      display: flex;
+      // justify-content: center;
+      align-items: center;
+      margin: auto;
+      transition: background 0.3s ease;
+      button {
+        height: 40px;
+        border: 2px solid #46516373;
+        font-size: 0.8em;
+        display: inline-block;
+        min-width: 3.5em;
+        margin: 0.3em;
+        border-radius: 3px;
+        padding: 0.8em;
+        background: linear-gradient(
+          90deg,
+          rgba(#27313e, 0.25) 0%,
+          rgba(#27313e, 0.25) 100%
+        );
+        transition: background 0.5s ease-in;
+
+        &:hover {
+          background: linear-gradient(
+            90deg,
+            rgba(70, 81, 99, 0.5) 0%,
+            rgba(71, 82, 100, 0.5) 100%
+          );
+        }
+      }
+    }
+    .bet-buttons {
+      padding-bottom: 0;
+    }
+    .bet-buttons2 {
+      padding-top: 0;
+    }
+  }
+
+  .roulette-container {
+    position: relative;
+    display: flex;
+    height: 180px;
+    align-items: center;
+    // justify-content: center;
+    border-radius: 4px;
+    position: relative;
+    border-top: 1px solid #404e60;
+    border-bottom: 1px solid #404e60;
+    .roulette-row {
+      display: flex;
+    }
+  }
+  .roulette-indicator--top {
+    transform: translate(-50%, -50%) rotate(90deg);
+    top: 0;
+  }
+
+  .roulette-indicator {
+    position: absolute;
+    height: 15px;
+    width: auto;
+    left: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 15;
+  }
+  .roulette-indicator::before {
+    position: absolute;
+    content: "";
+    top: 0px;
+    left: -12px;
+    width: 30px;
+    height: 15px;
+    background: linear-gradient(180deg, #9cb0cc 0%, #6c809c 100%) !important;
+    transform: rotate(-90deg);
+    clip-path: polygon(50% 100%, 0 20%, 100% 20%);
+  }
+  .roulette-indicator::after {
+    position: absolute;
+    content: "";
+    top: 0px;
+    left: 159px;
+    width: 30px;
+    height: 15px;
+    background: linear-gradient(180deg, #6c809c 0%, #9cb0cc 100%) !important;
+    transform: rotate(90deg);
+    clip-path: polygon(50% 100%, 0 20%, 100% 20%);
+  }
+
+  .roulette-wrapper {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 5;
+      box-shadow: inset 8em 0 3em -3em rgba(0, 0, 0, 0.185),
+        inset -8em 0 3em -3em rgba(0, 0, 0, 0.185);
+    }
+  }
+
+  .roulette-el-container {
+    position: absolute;
+    top: -8px;
+    display: flex;
+    height: 164px;
+    align-items: center;
+    position: relative;
+  }
+
+  .noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  .roulette-el--purple {
+    color: #6c64ff !important;
+    &::before,
+    &::after {
+      background: linear-gradient(180deg, #9c97ff 0%, #6c64ff 100%) !important;
+      background-color: #6c64ff !important;
+    }
+  }
+  .roulette-el--pink {
+    color: #9e5eff !important;
+    &::before,
+    &::after {
+      background: linear-gradient(180deg, #be93ff 0%, #9e5eff 100%) !important;
+      background-color: #9e5eff !important;
+    }
+  }
+  .roulette-el--gold {
+    color: #deb422 !important;
+    &:before,
+    &:after {
+      background: linear-gradient(180deg, #eccd62 0%, #deb422 100%) !important;
+      background-color: $gold !important;
+    }
+  }
+
+  .roulette-el {
+    position: relative;
+    height: 100px;
+    min-width: 80px;
+    line-height: 55px;
+    text-align: center;
+    color: #6c809c;
+    text-shadow: 0px 1.7px 12.7px rgba(104, 123, 149, 0.4);
+    border-radius: 8px;
+    margin: 0 2px;
+    font-weight: 600;
+    font-size: 20px;
+    background: linear-gradient(180deg, #27313e 50%, #2d3947 50%);
+    transform-style: preserve-3d;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.2);
+  }
+
+  .roulette-el::before {
+    position: absolute;
+    content: "";
+    top: -2px;
+    left: 50%;
+    width: 78px;
+    height: 50px;
+    border-radius: 8px;
+    background: linear-gradient(180deg, #6c809c 0%, #586878 100%);
+    transform: translate3d(-50%, 0%, -1px);
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.2);
+  }
+
+  .roulette-el:after {
+    position: absolute;
+    top: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+    content: "";
+    width: 55px;
+    height: 55px;
+    background: linear-gradient(180deg, #6c809c 0%, #4f5f75 100%);
+    box-shadow: 0px -1.69014px 21.1268px rgba(102, 120, 144, 0.4);
+    clip-path: polygon(50% 0%, 80% 50%, 50% 100%, 20% 50%);
+  }
+
+  .content-bets {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    user-select: none;
+    // box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.13), inset 0px -1px 0px rgba(255, 255, 255, 0.03), inset 0px -1px 1px rgba(255, 255, 255, 0.03);
+
+    .bets-2x-wrapper {
+      ::before {
+        background: linear-gradient(
+          180deg,
+          #6c809c 0%,
+          #586878 100%
+        ) !important;
+      }
+    }
+    .bets-3x-wrapper {
+      ::before {
+        background: linear-gradient(
+          180deg,
+          #9c97ff 0%,
+          #6c64ff 100%
+        ) !important;
+      }
+    }
+    .bets-5x-wrapper {
+      ::before {
+        background: linear-gradient(
+          180deg,
+          #be93ff 0%,
+          #9e5eff 100%
+        ) !important;
+      }
+    }
+    .bets-30x-wrapper {
+      ::before {
+        background: linear-gradient(
+          180deg,
+          #eccd62 0%,
+          #deb422 100%
+        ) !important;
+      }
+    }
+    .disabled {
+      opacity: 0.5;
+      .bets-buttons-wrap {
+        cursor: not-allowed !important;
+      }
+    }
+
+    .bets-buttons-wrap {
+      position: relative;
+      display: flex;
+      width: 100%;
+      min-width: 200px;
+      height: 5em;
+      line-height: 5em;
+      border-radius: 5px;
+      align-items: center;
+      justify-content: center;
+      background-color: #2d3947;
+      transform-style: preserve-3d;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.13),
+        inset 0px -1px 0px rgba(255, 255, 255, 0.03),
+        inset 0px -1px 1px rgba(255, 255, 255, 0.03);
+      margin-bottom: 0.2em;
+
+      &:hover {
+        background: rgb(71, 82, 100) 0%;
+      }
+      &::before {
+        position: absolute;
+        content: "";
+        top: -2px;
+        left: 50%;
+        width: calc(100% - 2px);
+        height: 50px;
+        border-radius: 4px;
+        background: linear-gradient(180deg, #6c809c 0%, #586878 100%);
+        transform: translate3d(-50%, 0%, -2px);
+      }
+      .bet-button {
+        position: relative;
+        top: 0;
+        left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 2.25em;
+        height: 2.25em;
+        line-height: 2.25em;
+        font-size: 14px;
+        font-weight: bold;
+        border-radius: 6px;
+        margin-right: 1em;
+        &--2x {
+          background: linear-gradient(180deg, #6c809c 0%, #586878 100%);
+          box-shadow: 0px 2px 15px rgba(108, 128, 155, 0.2);
+        }
+        &--3x {
+          background: linear-gradient(180deg, #9c97ff 0%, #6c64ff 100%);
+          box-shadow: 0px 2px 15px rgba(156, 151, 255, 0.2);
+        }
+        &--5x {
+          background: linear-gradient(180deg, #be93ff 0%, #9e5eff 100%);
+          box-shadow: 0px 2px 15px rgba(190, 146, 255, 0.2);
+        }
+        &--30x {
+          background: linear-gradient(180deg, #eccd62 0%, #deb422 100%);
+          box-shadow: 0px 2px 15px rgba(236, 205, 97, 0.2);
+        }
+      }
+    }
+    .bets-total-container {
+      background: linear-gradient(180deg, #27313e 0%, #2d3947 100%);
+      border-radius: 3px;
+    }
+    .bets-total-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.8em;
+      width: 100%;
+      height: 40px;
+      line-height: 40px;
+
+      span {
+        line-height: 40px;
+      }
+
+      .bets-total-item {
+        display: flex;
+        height: 40px;
+      }
+    }
+    .svg {
+      width: 20px;
+      margin-right: 0.3em;
+      &.person {
+        width: 16px;
+      }
+    }
+    .bets {
+      position: relative;
+      padding: 0 0.8em;
+      width: 100%;
+      border-radius: 0 0 5px 5px;
+
+      .bets-user {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.2em 0;
+        height: 100%;
+        line-height: 1;
+
+        .v-avatar {
+          height: 38px !important;
+          min-width: 38px !important;
+          width: 38px !important;
+        }
+        .user-bet,
+        .user-avatar {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 0.2em 0;
+          height: 100%;
+          line-height: 1;
+        }
+        .user-avatar {
+          img {
+            margin-right: 0.3em;
+          }
+        }
+      }
+    }
+  }
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  /* display: none; <- Crashes Chrome on hover */
+  -webkit-appearance: none;
+  margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type="number"] {
+  -moz-appearance: textfield; /* Firefox */
+}
+::v-deep input::-webkit-outer-spin-button,
+::v-deep input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+#roulette-progress {
+  background: rgba(255, 255, 255, 0.1);
+  justify-content: flex-start;
+  border-radius: 100px;
+  align-items: center;
+  position: relative;
+  display: flex;
+  height: 8px;
+  padding: 0 1px;
+  margin-top: 1em;
+  margin-bottom: -1em;
+}
+
+#roulette-progress-bar {
+  box-shadow: 0 10px 10px -10px $primary;
+  border-radius: 100px;
+  background: linear-gradient(180deg, #9c97ff 0%, #6c64ff 100%) !important;
+  height: 6px;
+  width: 0;
+}
+
+.v-application ul,
+.v-application ol {
+  padding-left: 0px !important;
+}

@@ -1,0 +1,28 @@
+@import './variables';
+
+/**
+ * This file converts our SCSS variables into a Javsacript object.
+ * Vuetify uses this object and lets you use the colors as class names ("primary", "primary--text", etc)
+*/
+
+// Export to JS modules
+:export {
+  primary: $primary;
+  primary300: $primary300;
+  secondary: $secondary;
+  secondary700: $secondary700;
+  grey100: $grey100;
+  grey300: $grey300;
+  grey400: $grey400;
+  grey500: $grey500;
+  grey700: $grey700;
+  grey800: $grey800;
+  grey900: $grey900;
+  gold: $gold;
+  light: $light;
+  danger: $danger;
+  success: $success;
+  text: $text;
+  text-invert: $text-invert;
+  whiteish: $whiteish;
+}

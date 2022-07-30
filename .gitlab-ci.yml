@@ -1,0 +1,91 @@
+# This file is a template, and might need editing before it works on your project.
+
+variables:
+  AWS_DEFAULT_REGION: eu-west-1
+  STAGING_S3_BUCKET: staging.skinwaste.com
+  STAGING_CLOUDFRONT_DIST: EYH86WYSWK7KM
+  PROD_S3_BUCKET: skinwaste.com
+  PROD_CLOUDFRONT_DIST: EBHFE3CY18KR2
+
+# You specify the stages. Those are the steps that GitLab will go through
+# Order matters.
+stages:
+  - build
+  - deploy
+  - invalidate
+
+# Build
+
+Build Staging:
+  stage: build
+  image: mhart/alpine-node:10
+  cache:
+    paths:
+      - node_modules/
+  before_script:
+    - yarn install
+  script:
+    - NODE_CONFIG_ENV=staging yarn run build
+  artifacts:
+    paths:
+      - dist/
+  only:
+    - dev
+
+Build Prod:
+  stage: build
+  image: mhart/alpine-node:10
+  cache:
+    paths:
+      - node_modules/
+  before_script:
+    - yarn install
+  script:
+    - NODE_CONFIG_ENV=production yarn run build
+  artifacts:
+    paths:
+      - dist/
+  only:
+    - master
+
+# Deployments
+
+Deploy Staging:
+  stage: deploy
+  image: xueshanf/awscli
+  dependencies:
+    - Build Staging
+  script:
+    - aws s3 sync dist/ s3://$STAGING_S3_BUCKET --delete --exclude "index.html" --exclude "*.map"
+    - aws s3 cp dist/index.html s3://$STAGING_S3_BUCKET/index.html --cache-control max-age=0,no-cache,no-store,must-revalidate --content-type text/html
+  only:
+    - dev
+
+Deploy Prod:
+  stage: deploy
+  image: xueshanf/awscli
+  dependencies:
+    - Build Prod
+  script:
+    - aws s3 sync dist/ s3://$PROD_S3_BUCKET --delete --exclude "index.html" --exclude "*.map"
+    - aws s3 cp dist/index.html s3://$PROD_S3_BUCKET/index.html --cache-control max-age=0,no-cache,no-store,must-revalidate --content-type text/html
+  only:
+    - master
+
+# Invalidations
+
+Invalidate Staging:
+  stage: invalidate
+  image: xueshanf/awscli
+  script:
+    - aws cloudfront create-invalidation --distribution-id $STAGING_CLOUDFRONT_DIST --paths '/*'
+  only:
+    - dev
+
+Invalidate Prod:
+  stage: invalidate
+  image: xueshanf/awscli
+  script:
+    - aws cloudfront create-invalidation --distribution-id $PROD_CLOUDFRONT_DIST --paths '/*'
+  only:
+    - master

@@ -1,0 +1,100 @@
+@import './variables';
+@import './responsive';
+
+html {
+  overflow-y: auto;
+}
+
+body #app {
+  color: $text;
+  background: linear-gradient(107.56deg, #2E3B49 0%, #1C242D 100%);
+}
+
+/**
+ * BEGIN CUSTOM SCSS
+*/
+
+.unicorn {
+  color: hotpink;
+}
+
+.theme--dark.v-input input::placeholder,
+.theme--dark.v-input textarea::placeholder {
+  color: $light;
+}
+
+// html body div[data-app].appwrapper.blurred * {
+//   transition: none !important;
+//   transition-duration: 0s !important;
+//   animation-duration: 0s !important;
+// }
+
+img.gun-icon {
+  // width: 1em;
+  height: 0.9em;
+  margin-top: -0.5em;
+  margin-bottom: -0.5em;
+  user-select: none;
+  pointer-events: none;
+}
+
+.v-dialog__container[noshadow='true'] .v-dialog {
+  box-shadow: none !important;
+}
+
+/**
+ * END CUSTOM SCSS
+*/
+
+// general fixes / improvements
+
+.link {
+  color: initial;
+  text-decoration: none;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+
+  &:hover {
+    opacity: 0.6;
+  }
+}
+
+/* custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  border-radius: 100px;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+::-webkit-scrollbar:hover {
+  background-color: rgba(0, 0, 0, 0.09);
+}
+
+::-webkit-scrollbar-thumb:vertical {
+  border-radius: 100px;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+::-webkit-scrollbar-thumb:vertical:active {
+  border-radius: 100px;
+  background: rgba(0, 0, 0, 0.61);
+}
+
+// transitions
+
+.v-scale {
+  &-enter {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  &-enter-to {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  &-leave-to {
+    opacity: 0;
+    transform: scale(0);
+  }
+}

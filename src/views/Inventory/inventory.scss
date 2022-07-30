@@ -1,0 +1,33 @@
+.h100 {
+  min-height: 100%;
+}
+
+.action-ctn {
+
+  .action-input {
+    min-width: 200px;
+    max-width: 250px;
+  }
+
+  .v-list .v-list-item {
+    background: $grey300 !important;
+  }
+
+  ::v-deep .v-input .v-input__control {
+    border-color: rgba($grey300, 0.25) !important;
+  }
+  ::v-deep .v-input .v-input__slot {
+    background-color: rgba($grey400, 0.25) !important;
+  }
+  ::v-deep .v-input input {
+    font-weight: 300;
+    font-size: 14px;
+    color: $whiteish;
+  }
+}
+
+.inventory-body {
+  overflow: auto;
+  height: calc(100vh - 220px);
+  width: 100%;
+}

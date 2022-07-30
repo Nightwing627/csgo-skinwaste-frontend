@@ -1,0 +1,29 @@
+.v-application .currency {
+  border: 2px solid;
+  border-color: rgba($light, 0.2) !important;
+
+  &.selected {
+    border-color: $secondary !important;
+    background: rgba($secondary700, 0.2) !important;
+  }
+}
+
+::v-deep {
+  .v-stepper__step__step .v-icon.v-icon {
+    font-size: 1rem;
+  }
+
+  .theme--dark.v-input input {
+    color: unset;
+  }
+}
+
+.currency-converter {
+  .input-coins {
+    max-width: 130px;
+  }
+}
+
+// .v-card__actions {
+//   box-shadow: 0 -5px 20px rgba(black, 0.7);
+// }

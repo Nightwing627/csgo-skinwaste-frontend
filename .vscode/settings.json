@@ -1,0 +1,53 @@
+{
+  // eslint formatter
+  "editor.formatOnSave": false,
+  "javascript.format.enable": false,
+  "eslint.enable": true,
+  "eslint.autoFixOnSave": true,
+  "eslint.validate": [
+    {
+      "language": "vue",
+      "autoFix": true
+    },
+    {
+      "language": "html",
+      "autoFix": true
+    },
+    {
+      "language": "javascript",
+      "autoFix": true
+    },
+    {
+      "language": "javascriptreact",
+      "autoFix": true
+    },
+    {
+      "language": "typescript",
+      "autoFix": true
+    }
+  ],
+  // stylelint integration
+  "css.validate": false,
+  "scss.validate": false,
+  "stylelint.enable": true,
+  "vetur.format.enable": false,
+  "vetur.validation.style": false,
+
+  "[scss]": {
+    "editor.formatOnSave": true
+  },
+
+  "emeraldwalk.runonsave": {
+    "autoClearConsole": true,
+    "commands": [
+      {
+        "match": "\\.(vue|scss)$",
+        "isAsync": true,
+        "cmd": "${workspaceFolder}/node_modules/.bin/stylelint ${file} --fix"
+      },
+    ]
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  }
+}

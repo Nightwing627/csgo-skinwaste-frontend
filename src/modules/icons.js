@@ -1,0 +1,230 @@
+// copy pasta to install
+// yarn add @fortawesome/fontawesome-svg-core @fortawesome/vue-fontawesome
+// yarn add @fortawesome/free-brands-svg-icons @fortawesome/pro-light-svg-icons @fortawesome/pro-regular-svg-icons @fortawesome/pro-solid-svg-icons
+// regex to find icons: 'fas'|'fab'|'far'|'fal'
+
+// DEV ONLY, USE TREESHAKING ON PROD
+// import { fab } from '@fortawesome/free-brands-svg-icons'
+// import { fal } from '@fortawesome/pro-light-svg-icons'
+// import { far } from '@fortawesome/pro-regular-svg-icons'
+// import { fas } from '@fortawesome/pro-solid-svg-icons'
+
+// export default [fab, far, fal, fas]
+
+import {
+  faBitcoin as fabBitcoin,
+  faEthereum as fabEthereum,
+  faTwitter as fabTwitter,
+  faDiscord as fabDiscord,
+  faTelegram as fabTelegram,
+  faSteamSymbol as fabSteamSymbol
+} from '@fortawesome/free-brands-svg-icons'
+
+import {
+  faCrosshairs as farCrosshairs,
+  faChevronDoubleUp as farChevronDoubleUp,
+  faCog as farCog,
+  faQuestionCircle as farQuestionCircle,
+  faUndo as farUndo,
+  faRepeat as farRepeat,
+  faSensorAlert as farSensorAlert,
+  faDollarSign as farDollarSign,
+  faSmileWink as farSmileWink,
+  faClock as farClock,
+  faPlus as farPlus
+} from '@fortawesome/pro-regular-svg-icons'
+
+import {
+  faGift as falGift,
+  faPlaneAlt as falPlaneAlt,
+  faDonate as falDonate
+} from '@fortawesome/pro-light-svg-icons'
+
+import {
+  faWifiSlash as fasWifiSlash,
+  faUserHardHat as fasUserHardHat,
+  faUserShield as fasUserShield,
+  faClock as fasClock,
+  faCoins as fasCoins,
+  faHeart as fasHeart,
+  faCaretDown as fasCaretDown,
+  faCaretUp as fasCaretUp,
+  faBadgeCheck as fasBadgeCheck,
+  faPaperPlane as fasPaperPlane,
+  faCheck as fasCheck,
+  faTimes as fasTimes,
+  faInfoCircle as fasInfoCircle,
+  faExclamationTriangle as fasExclamationTriangle,
+  faTimesHexagon as fasTimesHexagon,
+  faCogs as fasCogs,
+  faExchangeAlt as fasExchangeAlt,
+  faPiggyBank as fasPiggyBank,
+  faSignOut as fasSignOut,
+  faVolumeUp as fasVolumeUp,
+  faVolumeMute as fasVolumeMute,
+  faSync as fasSync,
+  faUsers as fasUsers,
+  faFunnelDollar as fasFunnelDollar,
+  faPencil as fasPencil,
+  faPlusCircle as fasPlusCircle,
+  faPlus as fasPlus,
+  faMinus as fasMinus,
+  faWrench as fasWrench,
+  faLink as fasLink,
+  faCopy as fasCopy,
+  faQrcode as fasQrcode,
+  faComments as fasComments,
+  faUsersMedical as fasUsersMedical,
+  faLock as fasLock,
+  faFileAlt as fasFileAlt,
+  faLifeRing as fasLifeRing,
+  faCircle as fasCircle,
+  faUser as fasUser,
+  faBars as fasBars,
+  faIdBadge as fasIdBadge,
+  faLayerGroup as fasLayerGroup,
+  faGrinStars as fasGrinStars,
+  faCrown as fasCrown,
+  faGift as fasGift,
+  faDharmachakra as fasDharmachakra,
+  faExternalLink as fasExternalLink,
+  faBan as fasBan,
+  faHistory as fasHistory,
+  faSearch as fasSearch,
+  faEraser as fasEraser,
+  faDollarSign as fasDollarSign,
+  faBoxUsd as fasBoxUsd,
+  faParachuteBox as fasParachuteBox,
+  faFootballHelmet as fasFootballHelmet,
+  faTreasureChest as fasTreasureChest,
+  faGamepad as fasGamepad,
+  faBookSpells as fasBookSpells,
+  faSackDollar as fasSackDollar,
+  faFolder as fasFolder,
+  faChartNetwork as fasChartNetwork,
+  faEye as fasEye,
+  faChevronLeft as fasChevronLeft,
+  faChevronRight as fasChevronRight
+} from '@fortawesome/pro-solid-svg-icons'
+
+import {
+  faDiceD4 as fadDiceD4,
+  faDiceD6 as fadDiceD6,
+  faDiceD8 as fadDiceD8,
+  faDiceD10 as fadDiceD10,
+  faDiceD12 as fadDiceD12,
+  faDiceD20 as fadDiceD20,
+  faCoin as fadCoin,
+  faGifts as fadGifts,
+  faDiamond as fadDiamond,
+  faUserHardHat as fadUserHardHat,
+  faOctagon as fadOctagon
+} from '@fortawesome/pro-duotone-svg-icons'
+
+export default [
+  // brands
+  fabBitcoin,
+  fabEthereum,
+  fabTwitter,
+  fabDiscord,
+  fabTelegram,
+  fabSteamSymbol,
+
+  // duotone
+  fadDiceD4,
+  fadDiceD6,
+  fadDiceD8,
+  fadDiceD10,
+  fadDiceD12,
+  fadDiceD20,
+  fadCoin,
+  fadGifts,
+  fadDiamond,
+  fadUserHardHat,
+  fadOctagon,
+
+  // solid
+  fasChartNetwork,
+  fasDollarSign,
+  fasWifiSlash,
+  fasUserHardHat,
+  fasEraser,
+  fasUserShield,
+  fasClock,
+  fasCoins,
+  fasHistory,
+  fasCaretDown,
+  fasCaretUp,
+  fasCrown,
+  fasGift,
+  fasDharmachakra,
+  fasBadgeCheck,
+  fasPaperPlane,
+  fasCheck,
+  fasTimes,
+  fasInfoCircle,
+  fasExclamationTriangle,
+  fasTimesHexagon,
+  fasCogs,
+  fasExchangeAlt,
+  fasPiggyBank,
+  fasBan,
+  fasGrinStars,
+  fasSignOut,
+  fasVolumeUp,
+  fasVolumeMute,
+  fasSync,
+  fasUsers,
+  fasFunnelDollar,
+  fasHeart,
+  fasLayerGroup,
+  fasExternalLink,
+  fasPencil,
+  fasPlusCircle,
+  fasPlus,
+  fasMinus,
+  fasWrench,
+  fasLink,
+  fasCopy,
+  fasQrcode,
+  fasComments,
+  fasUsersMedical,
+  fasLock,
+  fasFileAlt,
+  fasLifeRing,
+  fasCircle,
+  fasUser,
+  fasBars,
+  fasIdBadge,
+  fasBoxUsd,
+  fasParachuteBox,
+  fasFootballHelmet,
+  fasSearch,
+  fasTreasureChest,
+  fasGamepad,
+  fasBookSpells,
+  fasSackDollar,
+  fasFolder,
+  fasEye,
+  fasDollarSign,
+  fasChevronLeft,
+  fasChevronRight,
+
+  // light
+  falGift,
+  falPlaneAlt,
+  falDonate,
+
+  // regular
+  farCrosshairs,
+  farChevronDoubleUp,
+  farCog,
+  farQuestionCircle,
+  farUndo,
+  farRepeat,
+  farSensorAlert,
+  farDollarSign,
+  farSmileWink,
+  farClock,
+  farPlus
+]

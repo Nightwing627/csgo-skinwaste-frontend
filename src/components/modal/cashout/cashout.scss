@@ -1,0 +1,83 @@
+.v-application .currency {
+  border: 2px solid;
+  border-color: rgba($light, 0.2) !important;
+
+  &.selected {
+    border-color: $secondary !important;
+    background: rgba($secondary700, 0.2) !important;
+  }
+}
+
+.transaction-info input {
+  padding: 0;
+  border: none;
+  outline: none;
+  color: $light;
+  background: none;
+}
+
+::v-deep {
+  .v-stepper__step__step .v-icon.v-icon {
+    font-size: 1rem;
+  }
+}
+
+.currency-converter {
+  .input-coins {
+    max-width: 130px;
+  }
+}
+
+.v-stepper ::v-deep .v-stepper__wrapper {
+  // display: flex;
+  // flex-direction: column;
+  // flex-grow: 1;
+  height: 100%;
+}
+
+.flexhackidcanymore {
+  min-height: 0;
+  flex: 1;
+}
+
+// inv
+.inventory-ctn {
+  height: 100%;
+  min-height: 300px;
+  max-height: 500px;
+}
+
+.inventory-ctn ::v-deep .inventory-items {
+  padding-right: 5px;
+
+  &::-webkit-scrollbar {
+    width: 15px !important;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border: 5px solid rgba(0, 0, 0, 0);
+    border-radius: 15px !important;
+    background-color: lighten($grey500, 10) !important;
+    background-clip: padding-box;
+  }
+
+  &::-webkit-scrollbar-track {
+    border: solid 6px transparent;
+    background-color: $grey700 !important;
+    background-clip: padding-box;
+  }
+}
+
+@media only screen and (max-width: 599px) {
+  .v-card__text {
+    position: relative;
+    flex: 1;
+
+    .inventory-ctn {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      max-height: unset;
+    }
+  }
+}

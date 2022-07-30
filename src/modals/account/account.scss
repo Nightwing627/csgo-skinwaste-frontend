@@ -1,0 +1,100 @@
+.icon {
+  font-size: 20px;
+  color: rgba($text, 0.3);
+  transition: color 0.3s ease;
+
+  span {
+    color: white;
+    font-size: 14px;
+  }
+
+  &.custom {
+    svg {
+      width: 22px;
+
+      ::v-deep path {
+        fill: rgba($text, 0.3);
+      }
+    }
+  }
+
+  &.selected {
+    &[field="1"] {
+      color: $gold;
+    }
+
+    &[field="2"] {
+      color: #483ef3;
+    }
+
+    &[field="5"] {
+      color: #960084;
+    }
+
+    &[field="10"] {
+      color: #4d990b;
+    }
+
+    &[field="20"] {
+      color: #f28e2c;
+
+      svg ::v-deep path {
+        fill: #f28e2c;
+      }
+    }
+
+    &[field="40"] {
+      color: #eb4d4b;
+    }
+  }
+}
+
+.user-level {
+  .progress {
+    background: rgba(255, 255, 255, 0.1);
+    justify-content: flex-start;
+    border-radius: 100px;
+    align-items: center;
+    position: relative;
+    padding: 0;
+    display: flex;
+    height: 0.8rem;
+    width: 100%;
+  }
+
+  .progress-value {
+    animation: load 1.5s normal forwards;
+    // box-shadow: 0 10px 40px -10px #fff;
+    border-radius: 100px;
+    height: 0.7rem;
+    width: 0;
+    background: linear-gradient(90deg, #abaeff 0%, #9c97ff 100%);
+    box-shadow: 10px 0px 20px rgba(156, 151, 255, 0.25);
+  }
+
+  @keyframes load {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: calc(var(--width));
+    }
+  }
+
+  .right {
+    float: right;
+    margin-left: auto;
+  }
+
+  .dimmed {
+    opacity: 0.5;
+  }
+
+  .subtitle-1 {
+    color: #777d9a;
+  }
+}
+
+div.v-select-list div[role="listbox"] {
+  background-color: $grey700 !important;
+}
